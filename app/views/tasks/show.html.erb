@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row">
+    <h1><%= @task.title %></h1>
+
+  </div>
+  <p><%= @task.details %></p>
+  <p><%= @task.completed %></p>
+
+  <%= link_to task_path(@task), method: :delete, data: { confirm: "Are you sure you want to delete #{@task.title}?" } do %>
+    <i class="fas fa-trash" aria-hidden="true"></i>
+
+  <% end %>
+
+  <%= link_to "Come back", tasks_path %>
+  <%= link_to "Edit the task", edit_task_path(@task) %>
+
